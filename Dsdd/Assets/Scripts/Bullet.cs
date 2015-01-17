@@ -39,7 +39,6 @@ public class Bullet : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other) {
 		//print ("exit");
 		if (other.tag == "Player") {
-			print ("immune");
 			immune--;
 
 		}
@@ -56,7 +55,9 @@ public class Bullet : MonoBehaviour {
 	}
 
 	void createProtalEffect() {
+
 		GameObject g = Instantiate (protalEffect, transform.position, Quaternion.identity) as GameObject;
+		print (g);
 
 	}
 }

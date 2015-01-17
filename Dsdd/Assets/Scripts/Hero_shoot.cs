@@ -64,6 +64,7 @@ public class Hero_shoot : MonoBehaviour {
 		if (Input.GetMouseButtonDown (1)) {
 			if (Time.time > lastShootTime + shootInterval){
 				GameObject newBullet =  (GameObject)Instantiate (bulletProtalPrefab, transform.position, Quaternion.identity);
+				print (newBullet);
 				//newBullet.transform.position = transform.position;
 				newBullet.rigidbody2D.velocity = bulletSpeed * shootAngel();
 				lastShootTime = Time.time;

@@ -9,7 +9,9 @@ public class ProtalBullet : MonoBehaviour {
 	private float startTime;
 	// Use this for initialization
 	void Start () {
+		startTime = Time.time;
 	}
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -25,6 +27,8 @@ public class ProtalBullet : MonoBehaviour {
 			Vector3 portalDir = other.GetComponent<CellDir>().dir;
 			openProtal(portalDir);
 		}
+		print (transform.position);
+
 		if (other.tag != "Mirrow") {
 			if (immune == 0) {
 				Destroy(this.gameObject);
@@ -35,9 +39,7 @@ public class ProtalBullet : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other) {
 		//print ("exit");
 		if (other.tag == "Player") {
-			print ("immune");
 			immune--;
-			
 		}
 	}
 	void openProtal(Vector3 dir){
