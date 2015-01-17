@@ -48,7 +48,8 @@ public class PlayerController : MonoBehaviour {
 //	}
 	void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.LeftArrow)|| Input.GetKeyDown(KeyCode.RightArrow))
+		if(Input.GetKeyDown(KeyCode.LeftArrow)|| Input.GetKeyDown(KeyCode.RightArrow)
+		   || Input.GetKey(KeyCode.A) ||  Input.GetKey(KeyCode.D))
 		{
 			anim.SetBool("isWalking", true);
 		}		

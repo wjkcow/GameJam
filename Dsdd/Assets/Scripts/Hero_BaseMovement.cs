@@ -23,9 +23,9 @@ public class Hero_BaseMovement : MonoBehaviour {
 	void jump(){
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			Vector2 speed = jumpSpeed;
-			if(Input.GetKey (KeyCode.LeftArrow)){
+			if(Input.GetKey (KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)){
 				speed += -1 * jumpRightSpeed;
-			} else if (Input.GetKey (KeyCode.RightArrow)){
+			} else if (Input.GetKey (KeyCode.RightArrow) || Input.GetKey (KeyCode.D) ){
 				speed += jumpRightSpeed;
 			}
 			if(!isJumping){
@@ -36,13 +36,13 @@ public class Hero_BaseMovement : MonoBehaviour {
 		}
 		if(isJumping){
 			Vector2 speed = Vector2.zero;
-			if(Input.GetKey (KeyCode.LeftArrow)){
+			if(Input.GetKey (KeyCode.LeftArrow) || Input.GetKey(KeyCode.A) ){
 				if(!jumpTurnLeft){
 					this.rigidbody2D.velocity = new Vector2(0.0f, this.rigidbody2D.velocity.y);
 					speed += -1 * jumpRightSpeed;
 					jumpTurnLeft = true;
 				}
-			} else if (Input.GetKey (KeyCode.RightArrow)){
+			} else if (Input.GetKey (KeyCode.RightArrow) || Input.GetKey (KeyCode.D)){
 				if(!jumpTurnRight){
 					this.rigidbody2D.velocity = new Vector2(0.0f, this.rigidbody2D.velocity.y);
 					speed += jumpRightSpeed;
@@ -56,10 +56,10 @@ public class Hero_BaseMovement : MonoBehaviour {
 	// if not jumping move left or right
 	void move(){
 		if (!isJumping) {
-			if (Input.GetKey (KeyCode.LeftArrow)) {
+			if (Input.GetKey (KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
 				this.transform.Translate(-1 * walkRightSpeed * Time.deltaTime);
 			}
-			if (Input.GetKey (KeyCode.RightArrow)) {
+			if (Input.GetKey (KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
 				this.transform.Translate(walkRightSpeed * Time.deltaTime);
 			}
 		}
