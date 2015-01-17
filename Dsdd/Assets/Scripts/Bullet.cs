@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour {
 	public float liveTime ;
-	private bool immune = true;
+	private int immune = 2;
 	public float projectSpeed = 0.5f;
 	public GameObject protalEffect;
 	private float startTime;
@@ -21,21 +21,28 @@ public class Bullet : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.tag == "Transferable") {
-			if(!immune){
+		if (other.tag == "Transferable" || other.tag == "Player") {
+			if(immune == 0){
 				transferObject(other);
 				createProtalEffect();
 			}
 		}
 		if (other.tag != "Mirrow") {
-			if (!immune) {
+			if (immune == 0) {
 				Destroy(this.gameObject);
 			}
 		}
 	}
+	void OnTriggerStay2D(Collider2D other){
+		OnTriggerEnter2D (other);
+	}
 	void OnTriggerExit2D(Collider2D other) {
 		//print ("exit");
-		immune = false;
+		if (other.tag == "Player") {
+			print ("immune");
+			immune--;
+
+		}
 	}
 
 	void transferObject(Collider2D other){

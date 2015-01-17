@@ -3,13 +3,12 @@ using System.Collections;
 
 public class ProtalBullet : MonoBehaviour {
 	public float liveTime ;
-	public float immuneTime;
+	private int immune = 2;
 
 	public GameObject protalPrefab;
 	private float startTime;
 	// Use this for initialization
 	void Start () {
-		startTime = Time.time;
 	}
 	
 	// Update is called once per frame
@@ -18,20 +17,29 @@ public class ProtalBullet : MonoBehaviour {
 			Destroy(this.gameObject);
 		}
 	}
-	
+	void OnTriggerStay2D(Collider2D other){
+		OnTriggerEnter2D (other);
+	}
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "Protalable") {
 			Vector3 portalDir = other.GetComponent<CellDir>().dir;
 			openProtal(portalDir);
 		}
 		if (other.tag != "Mirrow") {
-			if (immuneTime + startTime < Time.time) {
+			if (immune == 0) {
 				Destroy(this.gameObject);
 			}
 		}
 	}
 	
-	
+	void OnTriggerExit2D(Collider2D other) {
+		//print ("exit");
+		if (other.tag == "Player") {
+			print ("immune");
+			immune--;
+			
+		}
+	}
 	void openProtal(Vector3 dir){
 		GameObject newProtal =  (GameObject)Instantiate (protalPrefab, transform.position, Quaternion.identity);
 		Globals g = GameObject.Find("Global").GetComponent<Globals>();
