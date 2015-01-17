@@ -10,9 +10,14 @@ public class Hero_shoot : MonoBehaviour {
 	public float bulletSpeed = 1.0f;
 
 	private float lastShootTime;
+
+	private Animator anim;
+
 	// Use this for initialization
 	void Start () {
 		lastShootTime = Time.time;
+		anim = GetComponent<Animator> ();
+
 	}
 	
 	// Update is called once per frame
@@ -47,6 +52,7 @@ public class Hero_shoot : MonoBehaviour {
 
 	// if mouse pressed, shoot
 	void shoot(){
+		anim.SetFloat("shootDir", -90.0f);
 		if (Input.GetMouseButtonDown (0)) {
 			if (Time.time > lastShootTime + shootInterval){
 				GameObject newBullet =  (GameObject)Instantiate (bulletPrefab, transform.position, Quaternion.identity);
@@ -70,6 +76,27 @@ public class Hero_shoot : MonoBehaviour {
 		Vector2 myPos = this.transform.position;
 		Vector2 mousePos = mousePosition ();
 		Vector2 v = mousePos - myPos;
+		//animation
+		float angleX = (int)Vector2.Angle(Vector2.right,v);
+		anim.SetFloat("shootDir", angleX);
+		Debug.Log("float is" + angleX);
+
+		if (angleX > 90) {
+			if(Hero_BaseMovement.facingRight)
+				Flip ();
+		}
+		if (angleX <= 90) {
+			if(!Hero_BaseMovement.facingRight)
+				Flip ();
+		}
+
 		return v.normalized;
+	}
+
+	void Flip(){
+		Hero_BaseMovement.facingRight = !Hero_BaseMovement.facingRight;
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
 	}
 }
