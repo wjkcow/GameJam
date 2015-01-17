@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour {
 		Globals g = GameObject.Find("Global").GetComponent<Globals>();
 		Vector3 velOther = other.transform.rigidbody2D.velocity;
 		float vel = velOther.magnitude;
-		velOther = vel * g.doorDirection + projectSpeed * g.doorDirection.normalized;
+		velOther = vel * g.doorDirection + projectSpeed * g.doorDirection;
 		other.transform.rigidbody2D.velocity = velOther;
 		other.transform.position = g.door.transform.position;
 		print (g.transform.position);
