@@ -5,15 +5,21 @@ public class Hero_BaseMovement : MonoBehaviour {
 	bool isJumping = false;
 	bool jumpTurnLeft = false;
 	bool jumpTurnRight = false;
+	bool facingRight = true;
 	public Vector2 walkRightSpeed = new Vector2(2.0f,0.0f);
 	public Vector2 jumpRightSpeed = new Vector2(0.5f,0.0f);
 	public Vector2 jumpSpeed = new Vector2(0.0f, 10.0f);
+
+	private Animator anim;
+
 	// Use this for initialization
 	void Start () {
+		anim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		animationControl ();
 		jump ();
 		move ();
 	}
@@ -31,7 +37,6 @@ public class Hero_BaseMovement : MonoBehaviour {
 			if(!isJumping){
 				this.rigidbody2D.velocity = speed;
 				isJumping = true;
-
 			}
 		}
 		if(isJumping){
@@ -58,9 +63,19 @@ public class Hero_BaseMovement : MonoBehaviour {
 		if (!isJumping) {
 			if (Input.GetKey (KeyCode.LeftArrow)) {
 				this.transform.Translate(-1 * walkRightSpeed * Time.deltaTime);
+				anim.SetBool("isWalking", true);
 			}
 			if (Input.GetKey (KeyCode.RightArrow)) {
 				this.transform.Translate(walkRightSpeed * Time.deltaTime);
+				anim.SetBool("isWalking", true);
+			}
+			if(Input.GetKeyDown(KeyCode.DownArrow))
+			{		
+				anim.SetBool("isDun", true);
+			}
+			if(Input.GetKeyUp(KeyCode.DownArrow))
+			{		
+				anim.SetBool("isDun", false);
 			}
 		}
 	}
@@ -73,4 +88,26 @@ public class Hero_BaseMovement : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		postJump ();
 	} 
+
+	void animationControl()
+	{
+		anim.SetBool("onGround", !isJumping);
+		anim.SetBool("isWalking", false);
+
+		if (Input.GetKey (KeyCode.LeftArrow)) {
+			if(facingRight)
+				Flip ();
+		}
+		if (Input.GetKey (KeyCode.RightArrow)) {
+			if(!facingRight)
+				Flip ();
+		}
+	}
+
+		void Flip(){
+			facingRight = !facingRight;
+			Vector3 theScale = transform.localScale;
+			theScale.x *= -1;
+			transform.localScale = theScale;
+		}
 }
