@@ -24,9 +24,10 @@ public class ProtalBullet : MonoBehaviour {
 			Vector3 portalDir = other.GetComponent<CellDir>().dir;
 			openProtal(portalDir);
 		}
-		if (immuneTime + startTime < Time.time) {
-			print ("Destroy");
-			Destroy(this.gameObject);
+		if (other.tag != "Mirrow") {
+			if (immuneTime + startTime < Time.time) {
+				Destroy(this.gameObject);
+			}
 		}
 	}
 	
