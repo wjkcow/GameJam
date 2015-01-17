@@ -46,13 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Bullet.cs" />
-     <Compile Include="Assets\Hero_BaseMovement.cs" />
-     <Compile Include="Assets\Hero_shoot.cs" />
-     <Compile Include="Assets\Protal.cs" />
-     <Compile Include="Assets\basicMove.cs" />
-     <Compile Include="Assets\fire.cs" />
-     <Compile Include="Assets\global.cs" />
+     <Compile Include="Assets\CellDir.cs" />
+     <Compile Include="Assets\ProtalBullet.cs" />
+     <Compile Include="Assets\Scripts\Bullet.cs" />
+     <Compile Include="Assets\Scripts\Globals.cs" />
+     <Compile Include="Assets\Scripts\Hero_BaseMovement.cs" />
+     <Compile Include="Assets\Scripts\Hero_shoot.cs" />
+     <Compile Include="Assets\Scripts\basicMove.cs" />
+     <Compile Include="Assets\Scripts\fire.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>

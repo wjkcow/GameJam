@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class global : MonoBehaviour {
+public class Globals : MonoBehaviour {
 
 	public GameObject door;
+	public Vector3 doorDirection;
 }

@@ -68,7 +68,6 @@ public class Hero_BaseMovement : MonoBehaviour {
 		jumpTurnRight = false;
 	}
 	void OnTriggerEnter2D(Collider2D other){
-		print ("hit ground");
 		postJump ();
 	} 
 }
