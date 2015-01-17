@@ -49,28 +49,29 @@ public class PlayerController : MonoBehaviour {
 	void Update()
 	{
 		if(Input.GetKeyDown(KeyCode.LeftArrow)|| Input.GetKeyDown(KeyCode.RightArrow)
-		   || Input.GetKey(KeyCode.A) ||  Input.GetKey(KeyCode.D))
+		   || Input.GetKeyDown(KeyCode.A) ||  Input.GetKeyDown(KeyCode.D))
 		{
 			anim.SetBool("isWalking", true);
 		}		
-		if(Input.GetKeyDown(KeyCode.UpArrow))
+		if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
 		{
 			anim.SetBool("onGround", false);
 		}		
-		if(Input.GetKeyDown(KeyCode.DownArrow))
+		if(Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
 		{		
 			anim.SetBool("isDun", true);
 		}
 
-		if(Input.GetKeyUp(KeyCode.LeftArrow)|| Input.GetKeyUp(KeyCode.RightArrow))
+		if(Input.GetKeyUp(KeyCode.LeftArrow)|| Input.GetKeyUp(KeyCode.RightArrow)
+		   || Input.GetKeyUp(KeyCode.A) ||  Input.GetKeyUp(KeyCode.D))
 		{
 			anim.SetBool("isWalking", false);
 		}		
-		if(Input.GetKeyUp(KeyCode.UpArrow))
+		if(Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
 		{
 			anim.SetBool("onGround", true);
 		}		
-		if(Input.GetKeyUp(KeyCode.DownArrow))
+		if(Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
 		{		
 			anim.SetBool("isDun", false);
 		}

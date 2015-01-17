@@ -69,11 +69,11 @@ public class Hero_BaseMovement : MonoBehaviour {
 				this.transform.Translate(walkRightSpeed * Time.deltaTime);
 				anim.SetBool("isWalking", true);
 			}
-			if(Input.GetKeyDown(KeyCode.DownArrow))
+			if(Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetKeyDown(KeyCode.S) )
 			{		
 				anim.SetBool("isDun", true);
 			}
-			if(Input.GetKeyUp(KeyCode.DownArrow))
+			if(Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
 			{		
 				anim.SetBool("isDun", false);
 			}
@@ -94,11 +94,11 @@ public class Hero_BaseMovement : MonoBehaviour {
 		anim.SetBool("onGround", !isJumping);
 		anim.SetBool("isWalking", false);
 
-		if (Input.GetKey (KeyCode.LeftArrow)) {
+		if (Input.GetKey (KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
 			if(facingRight)
 				Flip ();
 		}
-		if (Input.GetKey (KeyCode.RightArrow)) {
+		if (Input.GetKey (KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
 			if(!facingRight)
 				Flip ();
 		}
