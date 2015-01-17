@@ -86,7 +86,9 @@ public class Hero_BaseMovement : MonoBehaviour {
 		jumpTurnRight = false;
 	}
 	void OnTriggerEnter2D(Collider2D other){
-		postJump ();
+		if (other.tag != "Bullet_w" && other.tag != "Bullet_b") {
+			postJump ();
+		}
 	} 
 
 	void animationControl()
