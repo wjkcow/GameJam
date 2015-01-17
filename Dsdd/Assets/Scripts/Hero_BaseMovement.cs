@@ -23,13 +23,16 @@ public class Hero_BaseMovement : MonoBehaviour {
 	void jump(){
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			Vector2 speed = jumpSpeed;
-			isJumping = true;
 			if(Input.GetKey (KeyCode.LeftArrow)){
 				speed += -1 * jumpRightSpeed;
 			} else if (Input.GetKey (KeyCode.RightArrow)){
 				speed += jumpRightSpeed;
 			}
-			this.rigidbody2D.velocity = speed;
+			if(!isJumping){
+				this.rigidbody2D.velocity = speed;
+				isJumping = true;
+
+			}
 		}
 		if(isJumping){
 			Vector2 speed = Vector2.zero;
