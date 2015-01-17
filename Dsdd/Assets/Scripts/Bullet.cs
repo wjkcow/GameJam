@@ -5,7 +5,9 @@ public class Bullet : MonoBehaviour {
 	public float liveTime ;
 	public float immuneTime;
 	public float projectSpeed = 0.5f;
+	public GameObject protalEffect;
 	private float startTime;
+
 	// Use this for initialization
 	void Start () {
 		startTime = Time.time;
@@ -21,6 +23,7 @@ public class Bullet : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "Transferable") {
 			transferObject(other);
+			createProtalEffect();
 		}
 		if (immuneTime + startTime < Time.time) {
 			Destroy(this.gameObject);
@@ -36,5 +39,10 @@ public class Bullet : MonoBehaviour {
 		other.transform.rigidbody2D.velocity = velOther;
 		other.transform.position = g.door.transform.position;
 		print (g.transform.position);
+	}
+
+	void createProtalEffect() {
+		GameObject g = Instantiate (protalEffect, transform.position, Quaternion.identity) as GameObject;
+
 	}
 }
