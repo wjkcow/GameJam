@@ -52,7 +52,7 @@ public class Hero_shoot : MonoBehaviour {
 
 	// if mouse pressed, shoot
 	void shoot(){
-		anim.SetFloat("shootDir", -90.0f);
+		anim.SetBool("isShooting", false);
 		if (Input.GetMouseButtonDown (0)) {
 			if (Time.time > lastShootTime + shootInterval){
 				GameObject newBullet =  (GameObject)Instantiate (bulletPrefab, transform.position, Quaternion.identity);
@@ -77,16 +77,18 @@ public class Hero_shoot : MonoBehaviour {
 		Vector2 mousePos = mousePosition ();
 		Vector2 v = mousePos - myPos;
 		//animation
+		anim.SetBool("isShooting", true);
 		float angleX = (int)Vector2.Angle(Vector2.right,v);
-		anim.SetFloat("shootDir", angleX);
-		Debug.Log("float is" + angleX);
-
+		if(v.y>=0)
+			anim.SetFloat("shootDir", angleX);
+		else
+			anim.SetFloat("shootDir", -angleX);
 		if (angleX > 90) {
-			if(Hero_BaseMovement.facingRight)
+			if (Hero_BaseMovement.facingRight)
 				Flip ();
 		}
 		if (angleX <= 90) {
-			if(!Hero_BaseMovement.facingRight)
+			if (!Hero_BaseMovement.facingRight)
 				Flip ();
 		}
 
