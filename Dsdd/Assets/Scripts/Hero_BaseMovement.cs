@@ -112,6 +112,10 @@ public class Hero_BaseMovement : MonoBehaviour {
 			if(!facingRight)
 				Flip ();
 		}
+		if (Input.GetKey (KeyCode.K)) {
+			PlayerDead pdScript = this.gameObject.GetComponent<PlayerDead>();
+			pdScript.playerDead();
+		}
 	}
 
 	void Flip(){
