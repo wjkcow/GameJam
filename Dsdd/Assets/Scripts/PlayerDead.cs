@@ -13,7 +13,8 @@ public class PlayerDead : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (this.transform.position.y < -5  )
+			playerDead ();
 	}
 
 	
@@ -22,6 +23,8 @@ public class PlayerDead : MonoBehaviour {
 		if (isAlive) 
 		{
 			isAlive = false;
+			this.rigidbody2D.velocity *= 0;
+			this.rigidbody2D.gravityScale = 0.0f;
 			StartCoroutine(WaitAndPrint());
 			anim.SetBool("isAlive", false);
 		}
@@ -30,5 +33,6 @@ public class PlayerDead : MonoBehaviour {
 	IEnumerator WaitAndPrint() {
 		yield return new WaitForSeconds(2.0f);
 		Destroy (this.gameObject);
+		Application.LoadLevel (Application.loadedLevel);
 	}
 }

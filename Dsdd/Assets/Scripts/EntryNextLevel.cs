@@ -20,7 +20,7 @@ public class EntryNextLevel : MonoBehaviour {
 		}
 		if (!animClp)
 			Debug.LogError ("animation not loaded");
-		else {
+		else if (other.tag == "Player"){
 			// externally link animation
 			tmp.AddComponent<Animation>();
 			tmp.animation.AddClip (animClp, "Rotate-Shrink");
