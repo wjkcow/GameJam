@@ -9,18 +9,23 @@ public class Hero_BaseMovement : MonoBehaviour {
 	public Vector2 walkRightSpeed = new Vector2(2.0f,0.0f);
 	public Vector2 jumpRightSpeed = new Vector2(0.5f,0.0f);
 	public Vector2 jumpSpeed = new Vector2(0.0f, 10.0f);
-
+	public float jumpInterval = 0.5f;
+	private float lastJump;
 	private Animator anim;
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
+		lastJump = Time.time;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		animationControl ();
-		jump ();
+		if (Time.time > lastJump + jumpInterval) {
+			jump ();
+		}
+		jumping ();
 		move ();
 	}
 
@@ -38,7 +43,11 @@ public class Hero_BaseMovement : MonoBehaviour {
 				this.rigidbody2D.velocity = speed;
 				isJumping = true;
 			}
+			lastJump = Time.time;
 		}
+
+	}
+	void jumping(){
 		if(isJumping){
 			Vector2 speed = Vector2.zero;
 			if(Input.GetKey (KeyCode.LeftArrow) || Input.GetKey(KeyCode.A) ){
@@ -57,7 +66,6 @@ public class Hero_BaseMovement : MonoBehaviour {
 			this.rigidbody2D.velocity += speed;
 		} 
 	}
-
 	// if not jumping move left or right
 	void move(){
 		if (!isJumping) {
