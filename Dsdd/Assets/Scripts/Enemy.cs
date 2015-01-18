@@ -32,7 +32,6 @@ public class Enemy : MonoBehaviour {
 		} else if (other.name == "Ground"){
 			onGround = true;
 		} else {
-			print ("change dir");
 			dir = -1 * dir;
 		}
 	}
