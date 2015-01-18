@@ -15,9 +15,12 @@ public class EntryNextLevel : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		GameObject tmp = other.gameObject;
+		if (tmp.tag != "Player") {
+			return;
+		}
 		if (!animClp)
 			Debug.LogError ("animation not loaded");
-		else {
+		else if (other.tag == "Player"){
 			// externally link animation
 			tmp.AddComponent<Animation>();
 			tmp.animation.AddClip (animClp, "Rotate-Shrink");
