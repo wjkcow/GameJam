@@ -59,7 +59,12 @@ public class Hero_shoot : MonoBehaviour {
 				//newBullet.transform.position = transform.position;
 				newBullet.rigidbody2D.velocity = bulletSpeed * shootAngel();
 				lastShootTime = Time.time;
-			}	
+			}
+			if(Input.GetKey(KeyCode.T))
+			{
+				GameObject player = GameObject.FindGameObjectWithTag("Player");
+				player.transform.position = mousePosition ();
+			}
 		}
 		if (Input.GetMouseButtonDown (1)) {
 			if (Time.time > lastShootTime + shootInterval){
@@ -70,6 +75,8 @@ public class Hero_shoot : MonoBehaviour {
 				lastShootTime = Time.time;
 			}	
 		}
+
+
 	}
 
 	// angle to shoot
