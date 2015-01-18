@@ -30,6 +30,8 @@ public class EntryNextLevel : MonoBehaviour {
 	void ChangeLevel(GameObject player) {
 		// do whatever need to do
 		Debug.Log("Enter next level");
+		Application.LoadLevel ("ls_scene_1");
+
 		// clear up !
 	}
 }
