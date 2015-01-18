@@ -15,6 +15,9 @@ public class EntryNextLevel : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		GameObject tmp = other.gameObject;
+		if (tmp.tag != "Player") {
+			return;
+		}
 		if (!animClp)
 			Debug.LogError ("animation not loaded");
 		else {
