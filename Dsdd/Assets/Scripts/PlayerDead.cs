@@ -5,6 +5,8 @@ public class PlayerDead : MonoBehaviour {
 
 	private Animator anim;
 	private bool isAlive = true;
+	public AudioClip NewMusic;
+
 	
 	// Use this for initialization
 	void Start () {
@@ -31,7 +33,12 @@ public class PlayerDead : MonoBehaviour {
 	}
 	
 	IEnumerator WaitAndPrint() {
-		yield return new WaitForSeconds(2.0f);
+		//		GameObject go = GameObject.Find("Game Music"); //Finds the game object called Game Music, if it goes by a different name, change this. 
+		this.audio.clip = NewMusic; 
+		//Replaces the old audio with the new one set in the inspector. 
+		this.audio.PlayOneShot(NewMusic); //Plays the audio.
+
+		yield return new WaitForSeconds(3.5f);
 		Destroy (this.gameObject);
 		Application.LoadLevel (Application.loadedLevel);
 	}
