@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.tag == "Spike") {
+		if (other.name == "sprSpike") {
 			Instantiate(dieEffect, transform.position, Quaternion.identity);
 			Destroy(this.gameObject);		
 		} else if (other.tag == "Player"){
