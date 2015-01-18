@@ -24,7 +24,8 @@ public class Enemy : MonoBehaviour {
 			Destroy(this.gameObject);		
 		} else if (other.tag == "Player"){
 			//Game over Scene
-			Destroy(other.gameObject);
+			PlayerDead pdScript = other.gameObject.GetComponent<PlayerDead>();
+			pdScript.playerDead();
 		} else if (other.tag == "Bullet_b"){
 			print ("hit");
 			onGround = false;
