@@ -3,6 +3,7 @@ using System.Collections;
 
 public class EntryNextLevel : MonoBehaviour {
 	private AnimationClip animClp;
+	public string levelname;
 	// Use this for initialization
 	void Start () {
 		animClp = Resources.Load ("Rotate-shrink") as AnimationClip;
@@ -33,7 +34,7 @@ public class EntryNextLevel : MonoBehaviour {
 	void ChangeLevel(GameObject player) {
 		// do whatever need to do
 		Debug.Log("Enter next level");
-		Application.LoadLevel ("ls_scene_1");
+		Application.LoadLevel (levelname);
 
 		// clear up !
 	}
