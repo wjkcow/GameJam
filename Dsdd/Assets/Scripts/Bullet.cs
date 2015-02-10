@@ -27,7 +27,10 @@ public class Bullet : MonoBehaviour {
 				createProtalEffect();
 			}
 		}
-		if (other.tag != "Mirrow") {
+		if (other.tag == "HelpTrigger") {
+			return;
+		}
+		if (other.tag != "Mirrow" ) {
 			if (immune == 0) {
 				Destroy(this.gameObject);
 			}

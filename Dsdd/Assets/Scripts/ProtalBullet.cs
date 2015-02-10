@@ -28,7 +28,9 @@ public class ProtalBullet : MonoBehaviour {
 			openProtal(portalDir);
 		}
 		// print (transform.position);
-
+		if (other.tag == "HelpTrigger") {
+			return;
+		}
 		if (other.tag != "Mirrow") {
 			if (immune == 0) {
 				Destroy(this.gameObject);
