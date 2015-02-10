@@ -762,7 +762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ba5bc423335432d99a8f243082a991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reflectDir: {x: -1, y: 0}
+  reflectDir: {x: 1, y: 0}
 --- !u!68 &341887327
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1884,7 +1884,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1001 &631997319
 Prefab:
   m_ObjectHideFlags: 0
@@ -2583,7 +2583,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1001 &866376817
 Prefab:
   m_ObjectHideFlags: 0
@@ -3910,11 +3910,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 422262, guid: 5251e375e6e149d4fae4e1ca7ebbffe2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .921963632
+      value: .959999979
       objectReference: {fileID: 0}
     - target: {fileID: 422262, guid: 5251e375e6e149d4fae4e1ca7ebbffe2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.29447699
+      value: -1.28999996
       objectReference: {fileID: 0}
     - target: {fileID: 422262, guid: 5251e375e6e149d4fae4e1ca7ebbffe2, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3943,6 +3943,10 @@ Prefab:
     - target: {fileID: 422262, guid: 5251e375e6e149d4fae4e1ca7ebbffe2, type: 2}
       propertyPath: m_LocalScale.y
       value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422262, guid: 5251e375e6e149d4fae4e1ca7ebbffe2, type: 2}
+      propertyPath: reflectDir.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5251e375e6e149d4fae4e1ca7ebbffe2, type: 2}
@@ -4478,7 +4482,7 @@ Transform:
   m_PrefabInternal: {fileID: 1585115250}
   m_GameObject: {fileID: 1885231376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .921963632, y: -1.29447699, z: 0}
+  m_LocalPosition: {x: .959999979, y: -1.28999996, z: 0}
   m_LocalScale: {x: 1, y: .5, z: 1}
   m_Children:
   - {fileID: 1887110256}
