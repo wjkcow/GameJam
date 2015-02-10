@@ -627,6 +627,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11490728, guid: 324fcabc8db48cd4d9f0fbd6f20ec0f9, type: 2}
+      propertyPath: m_Text
+      value: "Tutorial 1: \nFly High"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 324fcabc8db48cd4d9f0fbd6f20ec0f9, type: 2}
   m_RootGameObject: {fileID: 818800140}
@@ -1420,7 +1424,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Tutorial 2: \nFly High"
+  m_Text: "Tutorial 1: \nFly High"
 --- !u!222 &909120730
 CanvasRenderer:
   m_ObjectHideFlags: 0

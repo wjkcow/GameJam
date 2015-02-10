@@ -338,7 +338,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11462112, guid: 8acb056f711cc6146b7b59b37a92849d, type: 2}
       propertyPath: sequence_id
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 462112, guid: 8acb056f711cc6146b7b59b37a92849d, type: 2}
       propertyPath: m_LocalPosition.x
@@ -890,7 +890,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Tutorial 1: \nSee yourself"
+  m_Text: "Tutorial 2: \nSee yourself"
 --- !u!222 &353227033
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1339,7 +1339,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11490728, guid: 324fcabc8db48cd4d9f0fbd6f20ec0f9, type: 2}
       propertyPath: m_Text
-      value: "Tutorial 1: \nSee yourself"
+      value: "Tutorial 2: \nSee yourself"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 324fcabc8db48cd4d9f0fbd6f20ec0f9, type: 2}
@@ -2951,7 +2951,7 @@ MonoBehaviour:
   m_Color: {r: .874970317, g: .960784316, b: .127162635, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4204112557e1c3f43843ed02a7f30267, type: 3}
-    m_FontSize: 36
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -3147,7 +3147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0de01f3b653854aabeec93e7ab6432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sequence_id: 0
+  sequence_id: 3
 --- !u!1001 &2142849376
 Prefab:
   m_ObjectHideFlags: 0

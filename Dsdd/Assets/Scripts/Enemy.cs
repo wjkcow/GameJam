@@ -30,9 +30,12 @@ public class Enemy : MonoBehaviour {
 			print ("hit");
 			onGround = false;
 			transform.rigidbody2D.velocity = new Vector2 (0,0);
+		} else if (other.name == "Wall") {
+			dir = -1 * dir;
 		} else if (other.name == "Ground"){
 			onGround = true;
-		} else {
+		}  
+		else {
 			dir = -1 * dir;
 		}
 	}
