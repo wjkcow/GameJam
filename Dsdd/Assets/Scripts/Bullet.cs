@@ -51,7 +51,7 @@ public class Bullet : MonoBehaviour {
 		velOther = vel * g.doorDirection + projectSpeed * g.doorDirection;
 		other.transform.rigidbody2D.velocity = velOther;
 		other.transform.position = g.door.transform.position;
-		print (g.transform.position);
+		// print (g.transform.position);
 	}
 
 	void createProtalEffect() {

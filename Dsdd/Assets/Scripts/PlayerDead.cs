@@ -29,6 +29,7 @@ public class PlayerDead : MonoBehaviour {
 			this.rigidbody2D.gravityScale = 0.0f;
 			StartCoroutine(WaitAndPrint());
 			anim.SetBool("isAlive", false);
+			// disable control
 		}
 	}
 	

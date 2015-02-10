@@ -27,7 +27,7 @@ public class ProtalBullet : MonoBehaviour {
 			Vector3 portalDir = other.GetComponent<CellDir>().dir;
 			openProtal(portalDir);
 		}
-		print (transform.position);
+		// print (transform.position);
 
 		if (other.tag != "Mirrow") {
 			if (immune == 0) {
