@@ -852,7 +852,7 @@ MonoBehaviour:
   m_Color: {r: .874970317, g: .960784316, b: .127162635, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4204112557e1c3f43843ed02a7f30267, type: 3}
-    m_FontSize: 36
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1571,7 +1571,7 @@ MonoBehaviour:
   m_Color: {r: .874970317, g: .960784316, b: .127162635, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4204112557e1c3f43843ed02a7f30267, type: 3}
-    m_FontSize: 36
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1955,7 +1955,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 9226a901af541432fb37dc502c19c46f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .150000006
+  m_Volume: .0599999987
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1963,7 +1963,7 @@ AudioSource:
   DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: -1
+  Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -1992,7 +1992,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 1
+      value: .5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3334,11 +3334,19 @@ Prefab:
       objectReference: {fileID: 8300000, guid: 9226a901af541432fb37dc502c19c46f, type: 3}
     - target: {fileID: 8210418, guid: 4614b740dc65f4887b92bd92bbbb6465, type: 2}
       propertyPath: m_Volume
-      value: .150000006
+      value: .0599999987
       objectReference: {fileID: 0}
     - target: {fileID: 11410418, guid: 4614b740dc65f4887b92bd92bbbb6465, type: 2}
       propertyPath: lifeTime
       value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210418, guid: 4614b740dc65f4887b92bd92bbbb6465, type: 2}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210418, guid: 4614b740dc65f4887b92bd92bbbb6465, type: 2}
+      propertyPath: Pan2D
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4614b740dc65f4887b92bd92bbbb6465, type: 2}
@@ -3696,7 +3704,7 @@ MonoBehaviour:
   m_Color: {r: .874970317, g: .960784316, b: .127162635, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4204112557e1c3f43843ed02a7f30267, type: 3}
-    m_FontSize: 36
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
